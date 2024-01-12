@@ -1,0 +1,24 @@
+  .pyramids-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .pyramid {
+    margin: 2rem;
+  }
+  
+  .dot-row {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .dot {
+    width: 5px; 
+    height: 5px; 
+    background-color: #58554b;
+    border-radius: 50%; 
+    margin: 2px; 
+  }

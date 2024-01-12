@@ -1,0 +1,9 @@
+.line {
+  background-color: #58554b;
+  height: 3px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0; 
+  z-index: 10; 
+}
