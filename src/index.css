@@ -7,3 +7,11 @@
 body {
   font-family: 'RodinProDB', sans-serif;
 }
+
+.text-embossed {
+  color: #5a5a5a;
+  text-shadow: 10px 20px 1px rgba(172, 168, 153, 0.5);
+  font-size: 55px;
+  font-weight: 300;
+  position: relative; 
+}

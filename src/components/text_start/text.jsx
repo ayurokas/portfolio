@@ -5,12 +5,12 @@ import './text.css';
 class TypewriterComponent extends Component {
   render() {
     return (
-      <div className="nier-automata-style">
+      <div className="typewriter-container">
         <Typewriter
           options={{
-            delay: 35,  // Délai entre chaque caractère
-            deleteSpeed: 15, // Vitesse de suppression des caractères
-            autoStart: true, // Démarrer automatiquement la machine à écrire
+            delay: 35,
+            deleteSpeed: 15,
+            autoStart: true,
           }}
           onInit={(typewriter) => {
             typewriter

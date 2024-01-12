@@ -1,13 +1,6 @@
 .settings-page {
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  .settings-page h1 {
-    color: orange;
-    font-size: 2em;
-    margin-bottom: 20px;
-  }
-  
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
