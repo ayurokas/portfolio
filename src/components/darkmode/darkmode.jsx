@@ -19,7 +19,6 @@ const DarkModeToggle = () => {
             </div>
 
             <div className="toggle-container">
-                <h2>Toggle Switch</h2>
                 <label className="switch">
                     <input type="checkbox" onChange={darkMode.toggle} checked={darkMode.value} />
                     <span className="slider"></span>
