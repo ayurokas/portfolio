@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './menu.css'; 
+import arrow from '../../assets/arrow.png'
 
 
 function Menu() {
@@ -9,10 +10,17 @@ function Menu() {
         setActiveMenuItem(item);
     };
 
+    const goToHomePage = () => {
+        window.location.href = '/';
+    };
+
     return (
         <div>
             <div className="menu-container">
                 <ul className="menu">
+                    <div className="back-arrow" onClick={goToHomePage}>
+                        <img src={arrow} alt="Back to home" />
+                    </div>
                     <li className={`menu-item ${activeMenuItem === 'about' ? 'active' : ''}`}>
                         <a href="#about" onClick={() => handleMenuItemClick('about')}>
                             <span className="line-above"></span> 
