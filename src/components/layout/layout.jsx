@@ -16,7 +16,8 @@ const Layout = ({ children }) => {
       </div>
       <footer>
       <div className="background-image-bottom"></div>
-        Copyright @ Elisa Renuy 
+          <p>inspired by Nier Automata</p>
+          <p>Copyright @ Elisa Renuy </p>
       </footer>
     </div>
   );

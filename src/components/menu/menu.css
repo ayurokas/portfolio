@@ -85,15 +85,14 @@
 
 .menu-item::after {
     content: '';
-    display: block;
-    width: 150px;
-    height: 150px;
-    background-image: url('../../assets/logo_1.png');
+    width: 60px;
+    height: 60px;
+    background-image: url('../../assets/logo_menu.png');
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
-    left: -90px;
-    top: 55%;
+    left: -45px;
+    top: 60%;
     transform: translateY(-29%);
     transition: opacity 0.3s ease, transform 0.3s ease;
     z-index: 10;
