@@ -1,0 +1,49 @@
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #58554b;
+    color: white;
+    font-family: 'Manrope', sans-serif; 
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+  
+  h1 {
+    font-size: 5rem;
+  }
+  
+  h2 {
+    font-size: 2rem; 
+    animation: blinkingText 1.2s infinite;
+  }
+  
+  @keyframes blinkingText {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+  }
+  
+  .system-check {
+    list-style: none;
+    text-align: left;
+  }
+  
+  .system-check li {
+    margin: 5px 0;
+  }
+  
+  .logo {
+    font-size: 4rem;
+    margin-top: 40px;
+    opacity: 0.6;
+  }
+  
+
+  
