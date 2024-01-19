@@ -1,18 +1,143 @@
-@font-face {
-  font-family: 'RodinProDB';
-  src: url('./font/FOT-Rodin Pro DB.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&display=swap');
 body {
-  font-family: 'RodinProDB', sans-serif;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+  background-image: url('./assets/background.jpg'); 
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+  background-position: center; 
+  background-size: cover;  image-rendering: optimizeQuality;
 }
 
-.text-embossed {
-  color: #5a5a5a;
+html, body, #root {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bgColor: #c7c2ac;
+  --textColor: #4e4b42;
+}
+
+.glitch {
+  color: var(--textColor);
+  font-size: 4em;
+  letter-spacing: 0.1em;
   text-shadow: 10px 20px 1px rgba(172, 168, 153, 0.5);
-  font-size: 55px;
-  font-weight: 300;
-  position: relative; 
-  padding-top: 100px;
+
+}
+
+h1 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 300; 
+}
+
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+.custom-container {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  margin: 0;
+  box-sizing: border-box; 
+}
+
+
+.button-container {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-button {
+  background-color: #ada893;
+  padding: 10px 70px;
+  border: none;
+  outline: none;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: 'Manrope', sans-serif; 
+}
+
+.color_text-button {
+  padding: 0; 
+  border: none; 
+  background-color: transparent; 
+  color: var(--textColor); 
+  font-family: 'Manrope', sans-serif; 
+  
+}
+
+.custom-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  background-color: #58554b;
+}
+
+.custom-button .line-above {
+  position: absolute;
+  top: -11px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.custom-button .line-below {
+  position: absolute;
+  bottom: -11px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.custom-button:hover, .custom-button:active {
+  background-color: #58554b;
+  color: #fff; 
+}
+
+.custom-button:hover::before, .custom-button:active::before {
+  background-color: #fff;
+}
+
+.custom-button:hover .line-above, .custom-button:active .line-above,
+.custom-button:hover .line-below, .custom-button:active .line-below {
+  background-color: #58554b;
+}
+
+.button-container .custom-button {
+  margin-bottom: 30px;
+}
+
+a{
+  text-decoration: none;
+  }
+
+.color_text {
+    color: black;
+}
+  
+.custom-button:hover .color_text-button, .custom-button:active .color_text-button {
+  color: #fff;
+}
+
+.text-component-class {
+  margin-bottom: 50px;
+
 }

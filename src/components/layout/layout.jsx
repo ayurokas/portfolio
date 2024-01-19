@@ -1,26 +1,23 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import Menu from '../../components/menu/menu'; 
-import Pyramide from '../../components/point_pyramide/pyramide';
-import Line from '../../components/lines/line';
-
-import './layout.css';
+import './layout.css'; 
 
 const Layout = ({ children }) => {
   const location = useLocation();
-
   return (
-    <div className="layout-container">
+    <div className="page-container">
+      <header>
       {location.pathname !== '/' && location.pathname !== '/settings' && <Menu />}
-      <div className="top-elements">
-        <Line />
-        <Pyramide />
+      <div className="background-image-top"></div>
+      </header>
+      <div className="content">
+        {children}
       </div>
-      {children}
-      <div className="bottom-elements">
-        <Line />
-        <Pyramide /> 
-      </div>
+      <footer>
+      <div className="background-image-bottom"></div>
+        Copyright @ Elisa Renuy 
+      </footer>
     </div>
   );
 };

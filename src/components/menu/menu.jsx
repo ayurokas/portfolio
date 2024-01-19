@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './menu.css'; 
-import arrow from '../../assets/arrow.png'
-
+import { NavLink } from 'react-router-dom';
+import arrow from '../../assets/arrow.png';
 
 function Menu() {
-    const [activeMenuItem, setActiveMenuItem] = useState('');
-
-    const handleMenuItemClick = (item) => {
-        setActiveMenuItem(item);
-    };
-
     const goToHomePage = () => {
         window.location.href = '/';
+    };
+
+    const getNavLinkClass = (isActive) => {
+        return isActive ? 'nav-link active' : 'nav-link';
     };
 
     return (
@@ -21,33 +19,40 @@ function Menu() {
                     <div className="back-arrow" onClick={goToHomePage}>
                         <img src={arrow} alt="Back to home" />
                     </div>
-                    <li className={`menu-item ${activeMenuItem === 'about' ? 'active' : ''}`}>
-                        <a href="#about" onClick={() => handleMenuItemClick('about')}>
+                    <li className="menu-item">
+                        <NavLink to="/profile" className={({ isActive }) => getNavLinkClass(isActive)}>
                             <span className="line-above"></span> 
-                            ABOUT
+                            PROFIL
                             <span className="line-below"></span>
-                        </a>
+                        </NavLink>
                     </li>
-                    <li className={`menu-item ${activeMenuItem === 'projet' ? 'active' : ''}`}>
-                        <a href="#projet" onClick={() => handleMenuItemClick('projet')}>
+                    <li className="menu-item">
+                        <NavLink to="/projet" className={({ isActive }) => getNavLinkClass(isActive)}>
                             <span className="line-above"></span>
-                            PROJECTS
+                            PROJET
                             <span className="line-below"></span> 
-                        </a>
+                        </NavLink>
                     </li>
-                    <li className={`menu-item ${activeMenuItem === 'social' ? 'active' : ''}`}>
-                        <a href="#social" onClick={() => handleMenuItemClick('social')}>
+                    <li className="menu-item">
+                        <NavLink to="/competence" className={({ isActive }) => getNavLinkClass(isActive)}>
+                            <span className="line-above"></span>
+                            COMPETENCE
+                            <span className="line-below"></span> 
+                        </NavLink>
+                    </li>
+                    <li className="menu-item">
+                        <NavLink to="/social" className={({ isActive }) => getNavLinkClass(isActive)}>
                             <span className="line-above"></span>
                             SOCIAL
                             <span className="line-below"></span> 
-                        </a>
+                        </NavLink>
                     </li>
-                    <li className={`menu-item ${activeMenuItem === 'contact' ? 'active' : ''}`}>
-                        <a href="#contact" onClick={() => handleMenuItemClick('contact')}>
+                    <li className="menu-item">
+                        <NavLink to="/contact" className={({ isActive }) => getNavLinkClass(isActive)}>
                             <span className="line-above"></span> 
                             CONTACT
                             <span className="line-below"></span>
-                        </a>
+                        </NavLink>
                     </li>
                 </ul>
             </div>

@@ -1,0 +1,75 @@
+.quest-box {
+  position: relative;
+  width: 900px;
+  height: 600px;
+  background-color: #ada893;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.message {
+  font-size: 18px;
+  color: #333;
+  margin: 10px; 
+  font-family: 'Manrope', sans-serif; 
+}
+
+.new-quest {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  background-color: #58554b;
+  color: white;
+  padding: 10px; 
+  font-family: 'Manrope', sans-serif; 
+}
+
+.close-button {
+  width: 20px;
+  height: 20px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.message-appear {
+  animation: fadeIn 1s ease-out;
+}
+
+.quest-button {
+  background-color: #ada893; 
+  color: black;
+  border: none; 
+  border-radius: 5px; 
+  padding: 15px 30px; 
+  font-family: 'Manrope', sans-serif; 
+  font-size: 18px; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+  margin-left: 20px; 
+}
+
+.quest-button:hover {
+  background-color: #58554b;
+  color: white;
+}

@@ -1,38 +1,35 @@
-.layout-container {
+.page-container {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    justify-content: space-between;
-    align-items: center; 
-    position: relative; 
-  }
-  
-  .top-elements {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 10px;
-    position: absolute;
-    margin-top: 30px;
-    
-  }
-  
-  .bottom-elements {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 10px;
-    position: relative;
   }
   
 
-.pyramide {
-    margin: 2; 
-}
-
-.line {
-    top: 35px; 
+  .content {
+    flex: 1;
+  }
   
-}
+  .background-image-top
+  {
+    background: url('../../assets/nier-border.svg') repeat-x;
+    background-size: 70px 50px;
+    height: 50px;
+    width: 100%;
+  }
+
+
+  .background-image-bottom {
+    background: url('../../assets/nier-border.svg') repeat-x;
+    background-size: 70px 50px;
+    height: 50px;
+    width: 100%;
+  }
+  
+  
+  footer {
+    margin-bottom: 20px;
+    color: #58554b;
+    text-align: center;
+    font-weight: 500;
+  }
+  

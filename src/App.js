@@ -1,18 +1,20 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Layout from './components/layout/layout'; 
-import Home from './page/index';
+import Home from './page/home';
 import Settings from './page/settings';
-import './App.css';
+import Profil from './page/profil';
+
 
 function App() {
   return (
     <Router>
-      <Layout> 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/settings" element={<Settings />} />
-        </Routes>
+      <Layout>
+      <Routes>
+        <Route path="/"element={<Home/>}/>
+        <Route path="/profile" element={<Profil/>}/>
+        <Route path="/settings" element={<Settings/>} />
+      </Routes>
       </Layout>
     </Router>
   );
