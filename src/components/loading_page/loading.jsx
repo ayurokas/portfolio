@@ -5,10 +5,8 @@ const LoadingScreen = () => {
 
     return (
         <div className="loading-screen">
-        <div className="logo">YoRHa</div>
-          <p>For the Glory of Mankind</p>
-          <h1>LOADING</h1>
-          <h2>- BOOTING SYSTEM...</h2>
+          <h1 className='load'>LOADING</h1>
+          <h2 className='bootsys'>BOOTING SYSTEM...</h2>
           <ul className="system-check">
             <li>Commencing System Check</li>
             <li>Memory Unit: Green</li>

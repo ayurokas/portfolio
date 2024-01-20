@@ -2,13 +2,16 @@
 body {
   font-family: 'Manrope', sans-serif;
   font-weight: 400;
-  background-image: url('./assets/background.png'); 
-  background-repeat: no-repeat; 
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+    url('./assets/background.png'); 
+  background-repeat: repeat, repeat, no-repeat;
   background-attachment: fixed; 
   background-position: center; 
-  background-size: cover;  image-rendering: optimizeQuality;
+  background-size: 5px 5px, 5px 5px, cover; 
+  image-rendering: optimizeQuality;
 }
-
 html, body, #root {
   margin: 0;
   padding: 0;
