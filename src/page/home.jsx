@@ -26,6 +26,7 @@ function Home() {
         {isLoading && <LoadingScreen />}
         <div className="button-container">
           <div className="custom-button">
+          <span className="line-above"></span>
             {isLoading ? (
               <div>Chargement en cours...</div>
             ) : (
@@ -33,6 +34,7 @@ function Home() {
                 COMMENCER
               </button>
             )}
+            <span className="line-below"></span>
           </div>
           <div className="custom-button">
             <Link to="/settings">

@@ -1,0 +1,44 @@
+.save-slot {
+  display: flex; 
+  margin-bottom: 20px;
+  font-family: 'Manrope', sans-serif;
+  padding-left: 15px;
+}
+
+.save-image {
+  width: 100px; 
+  height: auto; 
+  margin-right: 20px;
+  align-self: center; 
+}
+
+.slot-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.slot-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #58554b;
+  color: white;
+  padding: 10px; 
+  width: 100%;
+}
+
+
+.save-name,
+.save-date {
+  padding: 0 10px;
+}
+
+.slot-content {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.save-name {
+  margin-right: 300px; 
+}

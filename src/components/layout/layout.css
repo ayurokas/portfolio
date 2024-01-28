@@ -1,34 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
 .page-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
-  .content {
-    flex: 1;
-  }
-  
-  .background-image-top
-  {
-    background: url('../../assets/nier-border.svg') repeat-x;
-    background-size: 70px 50px;
-    height: 50px;
-    width: 100%;
-  }
+.content {
+  flex: 1;
+}
 
+.background-image-top {
+  background: url('../../assets/nier-border.svg') repeat-x;
+  background-size: 5% 50px;
+  height: 50px;
+  width: 100%;
+}
 
+.background-image-bottom {
+  background: url('../../assets/nier-border.svg') repeat-x;
+  background-size: 5% 50px; 
+  height: 50px;
+  width: 100%;
+}
+
+footer {
+  margin-bottom: 5px;
+  color: #58554b;
+  text-align: center;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 600px) {
+  .background-image-top,
   .background-image-bottom {
-    background: url('../../assets/nier-border.svg') repeat-x;
-    background-size: 70px 50px;
-    height: 50px;
-    width: 100%;
+    background-size: 35px 25px;
   }
-  
-  
-  footer {
-    margin-bottom: 5px;
-    color: #58554b;
-    text-align: center;
-    font-weight: 500;
-  }
+}
