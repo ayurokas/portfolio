@@ -10,7 +10,6 @@ body {
   background-attachment: fixed; 
   background-position: center; 
   background-size: 5px 5px, 5px 5px, cover; 
-  image-rendering: optimizeQuality;
 }
 html, body, #root {
   margin: 0;
