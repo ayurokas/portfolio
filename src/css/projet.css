@@ -2,13 +2,12 @@
   display: flex;
   align-items: center;
   position: relative;
-  margin-bottom: 40px;
-  width: 90%;
+  margin-bottom: 30px;
+  width: 85%;
   font-family: 'Manrope', sans-serif;
-  padding-left: 10px;
+  padding-left: 5px;
   box-sizing: border-box;
-  justify-content: space-between; /* This will push the child elements to the sides */
-
+  justify-content: space-between;
 }
 
 .slot-header {
@@ -18,8 +17,8 @@
   color: white;
   width: 100%;
   background-color: #58554b;
-  height: 40px;
-  margin-bottom: 10px;
+  height: 35px;
+  margin-bottom: 8px;
 }
 
 .slot-content {
@@ -27,10 +26,9 @@
 }
 
 .save-image {
-  width: 100px;
+  width: 80px;
   height: auto;
-  border-radius: 4px;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 .slot-details {
@@ -41,36 +39,36 @@
 }
 
 .slot-language {
-  font-size: 1em;
+  font-size: 0.9em;
   font-weight: normal;
 }
 
 .play-time {
-  font-size: 1em;
+  font-size: 0.9em;
   font-weight: normal;
   margin-left: auto;
 }
 
 .save-name {
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: bold;
   margin-left: 15px;
 }
 
 .save-date {
-  font-size: 0.9em;
+  font-size: 0.8em;
   font-weight: normal;
-  margin-right: 15px;
+  margin-right: 10px;
 }
 
 .save-screen {
-  width: 80%;
+  width: 70%;
   position: relative;
   padding-right: 17px;
 }
 
 .scroll-container {
-  max-height: 565px;
+  max-height: 550px;
   overflow-y: auto;
   width: calc(40% + 17px);
   margin-right: -17px;
@@ -78,7 +76,7 @@
 }
 
 .scroll-container::-webkit-scrollbar {
-  width: 5px;
+  width: 3px;
 }
 
 .scroll-container::-webkit-scrollbar-track {
@@ -87,77 +85,75 @@
 
 .scroll-container::-webkit-scrollbar-thumb {
   background-color: #58554b;
-  border-radius: 10px;
+  border-radius: 5px;
   border: none;
 }
 
 .project-details {
   position: absolute;
-  max-width: 900px;
-  margin: 40px auto; 
-  background-color: #ada893; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-  overflow: hidden; 
-  font-family: 'Manrope', sans-serif; 
-  top: -60px; 
+  max-width: 800px;
+  margin: 30px auto;
+  background-color: #ada893;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  font-family: 'Manrope', sans-serif;
+  top: -40px;
   right: 0;
-  width: calc(60% - 20px);
-
+  width: calc(55% - 5px);
 }
 
 .project-content {
-  padding: 20px; 
-  color: #333; 
-  font-size: 18px;
-  line-height: 1.7; 
+  padding: 15px;
+  color: #333;
+  font-size: 15px;
+  line-height: 1.5;
 }
 
 .project-details p {
-  margin: 5px 0;
+  margin: 2px 0;
 }
 
 .project-title {
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center; 
-  background-color: #58554b; 
-  color: white; 
-  font-size: 24px; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #58554b;
+  color: white;
+  font-size: 20px;
   font-weight: bold;
-  padding: 30px 20px; 
+  padding: 20px 10px;
   margin: 0;
-  text-align: left; 
+  text-align: left;
 }
 
-.project-intitule{
-  font-size: 30px;
+.project-intitule {
+  font-size: 20px;
+  color: black
 }
 
-.project-desciption{
-
-  font-size: 19px;
-  line-height: 1.7;
+.project-desciption {
+  font-size: 15px;
+  line-height: 1.8;
 }
 
 .project-button {
-  background-color: #ada893; 
-  color: black; 
-  padding: 10px 20px; 
-  margin-top: 10px;
-  border-radius: 5px; 
-  font-size: 20px; 
+  background-color: #ada893;
+  color: black;
+  padding: 5px 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  font-size: 16px;
   cursor: pointer;
-  border: 2px solid #58554b; 
+  border: 2px solid #58554b;
 }
 
 .project-button:hover {
-  background-color: #58554b; 
+  background-color: #58554b;
   color: white;
-  border: 2px solid #ada893; 
-
+  border: 1px solid #ada893;
 }
 
 .close-button {
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
 }

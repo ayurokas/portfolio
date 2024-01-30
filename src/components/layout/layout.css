@@ -11,23 +11,23 @@
 
 .background-image-top {
   background: url('../../assets/nier-border.svg') repeat-x;
-  background-size: 5% 50px;
-  height: 50px;
+  background-size: 4% 40px;
+  height: 40px;
   width: 100%;
 }
 
 .background-image-bottom {
   background: url('../../assets/nier-border.svg') repeat-x;
-  background-size: 5% 50px; 
-  height: 50px;
+  background-size: 4% 40px;
+  height: 40px;
   width: 100%;
 }
 
 footer {
-  margin-bottom: 5px;
+  margin-bottom: 1px;
   color: #58554b;
   text-align: center;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 @media screen and (max-width: 600px) {

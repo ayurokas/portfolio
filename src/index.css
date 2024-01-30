@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&display=swap');
 body {
   font-family: 'Manrope', sans-serif;
-  font-weight: 400;
+  font-weight:400;
   background-image: 
-    linear-gradient(to right, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(to right, rgba(0, 0, 0, 0.11) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
     url('./assets/background.png'); 
   background-repeat: repeat, repeat, no-repeat;
   background-attachment: fixed; 
   background-position: center; 
-  background-size: 5px 5px, 5px 5px, cover; 
+  background-size: 4px 4px, 4px 4px, cover; 
 }
 html, body, #root {
   margin: 0;
@@ -23,15 +23,15 @@ html, body, #root {
 
 .glitch {
   color: var(--textColor);
-  font-size: 4em;
+  font-size: 3em;
   letter-spacing: 0.1em;
-  text-shadow: 10px 20px 1px rgba(172, 168, 153, 0.5);
+  text-shadow: 9px 19px 0px rgba(172, 168, 153, 0.5);
 
 }
 
 h1 {
   font-family: 'Manrope', sans-serif;
-  font-weight: 300; 
+  font-weight: 200; 
 }
 
 button {
@@ -60,7 +60,7 @@ button {
 
 .custom-button {
   background-color: #ada893;
-  padding: 10px 70px;
+  padding: 9px 60px;
   border: none;
   outline: none;
   position: relative;
@@ -81,17 +81,17 @@ button {
 .custom-button::before {
   content: '';
   position: absolute;
-  top: 50%;
-  left: 15px;
-  transform: translateY(-50%);
-  width: 15px;
-  height: 15px;
+  top: 49%;
+  left: 14px;
+  transform: translateY(-49%);
+  width: 14px;
+  height: 14px;
   background-color: #58554b;
 }
 
 .custom-button .line-above {
   position: absolute;
-  top: -11px;
+  top: -10px;
   left: 0;
   width: 100%;
   height: 2px;
@@ -101,7 +101,7 @@ button {
 
 .custom-button .line-below {
   position: absolute;
-  bottom: -11px;
+  bottom: -10px;
   left: 0;
   width: 100%;
   height: 2px;
@@ -140,6 +140,6 @@ a{
 }
 
 .text-component-class {
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 
 }
