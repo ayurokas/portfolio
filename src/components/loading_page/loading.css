@@ -43,7 +43,6 @@
   
   h2 {
     font-size: 2rem; 
-    animation: blinkingText 1.2s infinite;
   }
   
   @keyframes blinkingText {
