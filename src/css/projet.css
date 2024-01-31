@@ -1,3 +1,4 @@
+/* Styles pour les éléments .save-slot */
 .save-slot {
   display: flex;
   align-items: center;
@@ -8,8 +9,27 @@
   padding-left: 5px;
   box-sizing: border-box;
   justify-content: space-between;
+  transition: background-color 0.3s;
+  cursor: pointer;
 }
 
+.save-slot:hover {
+  background-color: #ada893; 
+  border-color: #58554b; 
+}
+
+.save-slot:active {
+  background-color: #ada893; 
+  border-color: #58554b; 
+}
+
+/* Style pour l'élément .selected-slot */
+.selected-slot {
+  background-color: #ada893; 
+  border: 2px solid #58554b; 
+}
+
+/* Styles pour l'élément .slot-header */
 .slot-header {
   display: flex;
   justify-content: space-between;
@@ -21,52 +41,60 @@
   margin-bottom: 8px;
 }
 
+/* Styles pour l'élément .slot-content */
 .slot-content {
   width: calc(100% - 100px);
 }
 
+/* Styles pour l'élément .save-image */
 .save-image {
   width: 80px;
   height: auto;
   margin-right: 10px;
 }
 
+/* Styles pour l'élément .slot-details */
 .slot-details {
-  padding: 10px 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* Styles pour l'élément .slot-language */
 .slot-language {
   font-size: 0.9em;
   font-weight: normal;
 }
 
+/* Styles pour l'élément .play-time */
 .play-time {
   font-size: 0.9em;
   font-weight: normal;
   margin-left: auto;
 }
 
+/* Styles pour l'élément .save-name */
 .save-name {
   font-size: 1.1em;
   font-weight: bold;
   margin-left: 15px;
 }
 
+/* Styles pour l'élément .save-date */
 .save-date {
   font-size: 0.8em;
   font-weight: normal;
   margin-right: 10px;
 }
 
+/* Styles pour l'élément .save-screen */
 .save-screen {
   width: 70%;
   position: relative;
   padding-right: 17px;
 }
 
+/* Styles pour l'élément .scroll-container */
 .scroll-container {
   max-height: 550px;
   overflow-y: auto;
@@ -89,6 +117,7 @@
   border: none;
 }
 
+/* Styles pour l'élément .project-details */
 .project-details {
   position: absolute;
   max-width: 800px;
@@ -102,6 +131,7 @@
   width: calc(55% - 5px);
 }
 
+/* Styles pour l'élément .project-content */
 .project-content {
   padding: 15px;
   color: #333;
@@ -113,6 +143,7 @@
   margin: 2px 0;
 }
 
+/* Styles pour l'élément .project-title */
 .project-title {
   display: flex;
   justify-content: space-between;
@@ -126,16 +157,19 @@
   text-align: left;
 }
 
+/* Styles pour l'élément .project-intitule */
 .project-intitule {
   font-size: 20px;
-  color: black
+  color: black;
 }
 
-.project-desciption {
+/* Styles pour l'élément .project-description */
+.project-description {
   font-size: 15px;
   line-height: 1.8;
 }
 
+/* Styles pour l'élément .project-button */
 .project-button {
   background-color: #ada893;
   color: black;
@@ -153,7 +187,32 @@
   border: 1px solid #ada893;
 }
 
+/* Styles pour l'élément .close-button */
 .close-button {
   width: 15px;
   height: 15px;
+  cursor: pointer;
 }
+
+.project-details-animation-enter {
+  transform: scale(0.9);
+  opacity: 0;
+}
+
+.project-details-animation-enter-active {
+  transform: scale(1);
+  opacity: 1;
+  transition: transform 300ms, opacity 300ms;
+}
+
+.project-details-animation-exit {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.project-details-animation-exit-active {
+  transform: scale(0.9);
+  opacity: 0;
+  transition: transform 300ms, opacity 300ms;
+}
+

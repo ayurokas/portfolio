@@ -1,0 +1,12 @@
+@keyframes leverBrasAnimation {
+    0% {
+      transform: translateY(0); /* Position de départ, bras baissé */
+    }
+    100% {
+      transform: translateY(-20px); /* Position finale, bras levé */
+    }
+  }
+  
+  .coucou-visible .image-normale {
+    animation: leverBrasAnimation 1s ease-in-out; /* Applique l'animation quand la classe coucou-visible est présente */
+  }

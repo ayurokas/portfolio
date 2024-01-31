@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import { CSSTransition } from 'react-transition-group';
 import GlitchText from '../components/glicht/glicht';
 import '../css/projet.css';
 import imgprojet from '../assets/machine_head.png'; 
 import Cross from '../assets/close.png';
-
-
 
 const saves = [
   { 
@@ -65,12 +64,23 @@ const saves = [
   
 
 ];
-
 const SaveScreen = () => {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [showDetails, setShowDetails] = useState(false);
+  const projectDetailsRef = useRef(null); 
 
   const handleProjectClick = (project) => {
-    setSelectedProject(project);
+    if (selectedProject) {
+      setShowDetails(false);
+
+      setTimeout(() => {
+        setSelectedProject(project);
+        setShowDetails(true);
+      }, 300);
+    } else {
+      setSelectedProject(project);
+      setShowDetails(true);
+    }
   };
 
   const openProjectInNewTab = (projectUrl) => {
@@ -78,8 +88,12 @@ const SaveScreen = () => {
   };
 
   const handleCloseClick = () => {
-    setSelectedProject(null);
+    setShowDetails(false);
+    setTimeout(() => {
+      setSelectedProject(null);
+    }, 200);
   };
+
   return (
     <>
       <div className="custom-container">
@@ -88,7 +102,11 @@ const SaveScreen = () => {
       <div className="save-screen">
         <div className="scroll-container">
           {saves.map((save, index) => (
-            <div className="save-slot" key={index} onClick={() => handleProjectClick(save)}>
+            <div
+              className={`save-slot ${selectedProject === save ? 'selected-slot' : ''}`}
+              key={index}
+              onClick={() => handleProjectClick(save)}
+            >
               <img src={save.imagePath} alt={`${save.name} project`} className="save-image" />
               <div className="slot-content">
                 <div className="slot-header">
@@ -100,29 +118,45 @@ const SaveScreen = () => {
                   <span className="play-time">{`Play Time: ${save.playTime}`}</span>
                 </div>
               </div>
-            </div>  
+            </div>
           ))}
         </div>
-        {selectedProject && (
-          <div className="project-details">
-            <div className="project-title">
-              {selectedProject.name}
-              <img src={Cross} alt="Close" className="close-button" onClick={handleCloseClick} />
-            </div>
-            <div className="project-content">
-              <p className="project-intitule">{selectedProject.title}</p>
-              <p className="project-desciption">
-                {selectedProject.description.split('\n').map((paragraph, index) => (
-                  <React.Fragment key={index}>
-                    {paragraph}
-                    <br /> 
-                  </React.Fragment>
-                ))}
-              </p>
-              <button className="project-button" onClick={() => openProjectInNewTab(selectedProject.url)}>Voir le projet</button>
-            </div>
+        <CSSTransition
+          in={showDetails}
+          timeout={300}
+          classNames="project-details-animation"
+          unmountOnExit
+          onExited={() => setSelectedProject(null)}
+          nodeRef={projectDetailsRef} // Utilisez la référence projectDetailsRef
+        >
+          <div className="project-details" ref={projectDetailsRef}>
+            {selectedProject && (
+              <>
+                <div className="project-title">
+                  {selectedProject.name}
+                  <img src={Cross} alt="Close" className="close-button" onClick={handleCloseClick} />
+                </div>
+                <div className="project-content">
+                  <p className="project-intitule">{selectedProject.title}</p>
+                  <p className="project-desciption">
+                    {selectedProject.description.split('\n').map((paragraph, index) => (
+                      <React.Fragment key={index}>
+                        {paragraph}
+                        <br />
+                      </React.Fragment>
+                    ))}
+                  </p>
+                  <button
+                    className="project-button"
+                    onClick={() => openProjectInNewTab(selectedProject.url)}
+                  >
+                    Voir le projet
+                  </button>
+                </div>
+              </>
+            )}
           </div>
-        )}
+        </CSSTransition>
       </div>
     </>
   );
