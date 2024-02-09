@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import LoadingScreen from '../components/loading_page/loading'; 
 import GlitchText from '../components/glicht/glicht';
 import TextComponent from './../components/text_start/text';
+import '../css/home.css';
+
 
 function Home() {
   const [isLoading, setIsLoading] = useState(false);
@@ -24,11 +26,12 @@ function Home() {
           <TextComponent/> 
         </div>
         {isLoading && <LoadingScreen />}
-        <div className="mt-5">
+        <div className="mt-3">
           <button className="custom-button" onClick={handleStartClick}>
             {isLoading ? "Chargement en cours..." : "COMMENCER"}
             <span className="line-above"></span>
             <span className="line-below"></span>
+            <span className="black-square"></span>
           </button>
         </div>
         <div className="mt-4">
@@ -36,6 +39,7 @@ function Home() {
           PARAMÈTRE
           <span className="line-above"></span>
           <span className="line-below"></span>
+          <span className="black-square"></span>
         </Link>
         </div>
       </div>

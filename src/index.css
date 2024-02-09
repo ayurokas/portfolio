@@ -14,65 +14,9 @@ body, html, #root {
   background-size: 4px 4px, 4px 4px, cover;
 }
 
-a, a:visited {
-  text-decoration: none;
-}
-
-.custom-button {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  padding: 9px 60px;
-  border: none;
-  position: relative;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-family: 'Manrope', sans-serif;
-  display: inline-block;
-  width: 250px;
-  text-align: center;
-  box-sizing: border-box;
-}
-
-.custom-button .line-above,
-.custom-button .line-below {
-  position: absolute;
-  height: 2px;
-  background-color: transparent;
-  transition: background-color 0.3s ease;
-}
-
-.custom-button .line-above {
-  top: -10px;
-  left: 0;
-  width: 0%;
-}
-
-.custom-button .line-below {
-  bottom: -10px;
-  right: 0;
-  width: 0%;
-}
-
-.custom-button:hover .line-above,
-.custom-button:focus .line-above {
-  width: 100%;
-  background-color: var(--secondary-color);
-}
-
-.custom-button:hover .line-below,
-.custom-button:focus .line-below {
-  width: 100%;
-  background-color: var(--secondary-color);
-}
-
-.custom-button:hover,
-.custom-button:focus {
-  background-color: var(--secondary-color); 
-  color: var(--primary-color);
-}
 
 .glitch {
-  color: var(--secondary-color); 
+  color: var(--secondary-color);
   font-size: 3em;
   letter-spacing: 0.1em;
   text-shadow: 9px 19px 0px rgba(172, 168, 153, 0.5);

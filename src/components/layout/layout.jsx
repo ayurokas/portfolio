@@ -14,10 +14,10 @@ const Layout = ({ children }) => {
       <main className="flex-fill">
         {children}
       </main>
-      <footer className="text-center text-dark py-3">
+      <footer className="text-center py-2">
         <div className="background-image-bottom"></div>
         <p>Inspired by Nier Automata</p>
-        <p>Copyright © Elisa Renuy 2021</p>
+        <p>Copyright © Elisa Renuy</p>
       </footer>
     </div>
   );

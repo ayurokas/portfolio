@@ -8,17 +8,14 @@ function Menu() {
     const location = useLocation();
     const [clickedLink, setClickedLink] = useState(location.pathname);
 
-    // Fonction pour déterminer la classe du lien en fonction de l'URL
     const getNavLinkClass = (path) => {
         return location.pathname === path ? 'nav-link active' : 'nav-link';
     };
 
-    // Fonction pour gérer le clic sur un lien de navigation
     const handleNavLinkClick = (event, path) => {
         setClickedLink(path); 
     };
 
-    // Mettre à jour clickedLink lorsque la location change
     useEffect(() => {
         setClickedLink(location.pathname);
     }, [location]);

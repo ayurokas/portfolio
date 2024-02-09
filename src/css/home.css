@@ -1,0 +1,83 @@
+.custom-button::before,
+.custom-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: transparent;
+  transform: scaleX(0);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  top: -5px;
+}
+
+.custom-button::after,
+.custom-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: transparent;
+  transform: scaleX(0);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  bottom: -5px;
+}
+
+.custom-button:hover::before,
+.custom-button:focus::before,
+.custom-button:hover::after,
+.custom-button:focus::after,
+.custom-link:hover::before,
+.custom-link:focus::before,
+.custom-link:hover::after,
+.custom-link:focus::after {
+  transform: scaleX(1);
+  background-color: var(--secondary-color);
+}
+
+.custom-button {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 9px 60px;
+  border: none;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: 'Manrope', sans-serif;
+  display: inline-block;
+  width: 250px;
+  text-align: center;
+  box-sizing: border-box;
+  font-weight: 500;
+}
+
+.custom-link {
+  text-decoration: none;
+  position: relative;
+}
+
+.custom-button:hover,
+.custom-button:focus {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.custom-button .black-square,
+.custom-link .black-square {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: black;
+  top: 50%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  transition: background-color 0.2s ease;
+}
+
+.custom-button:hover .black-square,
+.custom-button:focus .black-square,
+.custom-link:hover .black-square,
+.custom-link:focus .black-square {
+  background-color: white;
+}

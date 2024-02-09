@@ -12,6 +12,8 @@
 }
 .navbar-nav .nav-link {
   font-size: 0.9vw; 
+  font-weight: 500;
+
 }
 
 .nav-link.active,
@@ -25,6 +27,7 @@
   background-color: var(--primary-color);
   width: 10%;
   position: relative;
+
 }
 
 .nav-link::before,
