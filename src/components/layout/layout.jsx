@@ -6,18 +6,18 @@ import './layout.css';
 const Layout = ({ children }) => {
   const location = useLocation();
   return (
-    <div className="page-container">
+    <div className="d-flex flex-column min-vh-100">
       <header>
-      {location.pathname !== '/' && location.pathname !== '/settings' && <Menu />}
-      <div className="background-image-top"></div>
+        {location.pathname !== '/' && location.pathname !== '/settings' && <Menu />}
+        <div className="background-image-top"></div>
       </header>
-      <div className="content">
+      <main className="flex-fill">
         {children}
-      </div>
-      <footer>
-      <div className="background-image-bottom"></div>
-          <p>Inspired by Nier Automata</p>
-          <p>Copyright @ Elisa Renuy </p>
+      </main>
+      <footer className="text-center text-dark py-3">
+        <div className="background-image-bottom"></div>
+        <p>Inspired by Nier Automata</p>
+        <p>Copyright © Elisa Renuy 2021</p>
       </footer>
     </div>
   );

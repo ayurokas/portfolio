@@ -1,60 +1,76 @@
-import React from 'react';
-import './menu.css'; 
-import { NavLink, useLocation } from 'react-router-dom'; 
+import React, { useState, useEffect } from 'react';
+import './menu.css';
+import { NavLink, useLocation } from 'react-router-dom';
 import arrow from '../../assets/arrow.png';
 
-function Menu() {
-    const location = useLocation(); // Obtenez l'URL actuelle
 
-    // Fonction pour déterminer si le lien est actif en fonction de l'URL
+function Menu() {
+    const location = useLocation();
+    const [clickedLink, setClickedLink] = useState(location.pathname);
+
+    // Fonction pour déterminer la classe du lien en fonction de l'URL
     const getNavLinkClass = (path) => {
         return location.pathname === path ? 'nav-link active' : 'nav-link';
     };
 
+    // Fonction pour gérer le clic sur un lien de navigation
+    const handleNavLinkClick = (event, path) => {
+        setClickedLink(path); 
+    };
+
+    // Mettre à jour clickedLink lorsque la location change
+    useEffect(() => {
+        setClickedLink(location.pathname);
+    }, [location]);
+
     return (
-        <div>
-            <div className="menu-container">
-                <ul className="menu">
-                    <div className="back-arrow" onClick={() => {window.location.href = '/';}}>
-                        <img src={arrow} alt="Back to home" />
+        <div className="menu-container">
+            <nav className="navbar navbar-expand-lg navbar-light justify-content-center">
+                <div className="container-fluid">
+                    <div className="navbar-brand" onClick={() => { window.location.href = '/'; }}>
+                        <img src={arrow} alt="Back to home"/>
                     </div>
-                    <li className="menu-item">
-                        <NavLink to="/profile" className={getNavLinkClass('/profile')}>
-                            <span className="line-above"></span> 
-                            PROFIL
-                            <span className="line-below"></span>
-                        </NavLink>
-                    </li>
-                    <li className="menu-item">
-                        <NavLink to="/projet" className={getNavLinkClass('/projet')}>
-                            <span className="line-above"></span>
-                            PROJET
-                            <span className="line-below"></span> 
-                        </NavLink>
-                    </li>
-                    <li className="menu-item">
-                        <NavLink to="/competence" className={getNavLinkClass('/competence')}>
-                            <span className="line-above"></span>
-                            COMPÉTENCE
-                            <span className="line-below"></span> 
-                        </NavLink>
-                    </li>
-                    <li className="menu-item">
-                        <NavLink to="/social" className={getNavLinkClass('/social')}>
-                            <span className="line-above"></span>
-                            SOCIAL
-                            <span className="line-below"></span> 
-                        </NavLink>
-                    </li>
-                    <li className="menu-item">
-                        <NavLink to="/contact" className={getNavLinkClass('/contact')}>
-                            <span className="line-above"></span> 
-                            CONTACT
-                            <span className="line-below"></span>
-                        </NavLink>
-                    </li>
-                </ul>
-            </div>
+                    <div className="collapse navbar-collapse justify-content-center">
+                        <ul className="navbar-nav">
+                            <li className={`nav-item ${clickedLink === '/profile' ? 'active' : ''}`}>
+                                <NavLink to="/profile" className={getNavLinkClass('/profile')} onClick={(e) => handleNavLinkClick(e, '/profile')}>
+                                    <span className="line-above"></span>
+                                    PROFIL
+                                    <span className="line-below"></span>
+                                </NavLink>
+                            </li>
+                            <li className={`nav-item ${clickedLink === '/projet' ? 'active' : ''}`}>
+                                <NavLink to="/projet" className={getNavLinkClass('/projet')} onClick={(e) => handleNavLinkClick(e, '/projet')}>
+                                    <span className="line-above"></span>
+                                    PROJET
+                                    <span className="line-below"></span>
+                                </NavLink>
+                            </li>
+                            <li className={`nav-item ${clickedLink === '/competence' ? 'active' : ''}`}>
+                                <NavLink to="/competence" className={getNavLinkClass('/competence')} onClick={(e) => handleNavLinkClick(e, '/competence')}>
+                                    <span className="line-above"></span>
+                                    COMPÉTENCE
+                                    <span className="line-below"></span>
+                                </NavLink>
+                            </li>
+                            <li className={`nav-item ${clickedLink === '/social' ? 'active' : ''}`}>
+                                <NavLink to="/social" className={getNavLinkClass('/social')} onClick={(e) => handleNavLinkClick(e, '/social')}>
+                                    <span className="line-above"></span>
+                                    SOCIAL
+                                    <span className="line-below"></span>
+                                </NavLink>
+                            </li>
+                            <li className={`nav-item ${clickedLink === '/contact' ? 'active' : ''}`}>
+                                <NavLink to="/contact" className={getNavLinkClass('/contact')} onClick={(e) => handleNavLinkClick(e, '/contact')}>
+                                    <span className="line-above"></span>
+                                    CONTACT
+                                    <span className="line-below"></span>
+                                </NavLink>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         </div>
     );
 }

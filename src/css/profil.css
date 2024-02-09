@@ -1,47 +1,3 @@
-.quest-box {
-  position: relative;
-  width: 800px;
-  height: 500px;
-  background-color: #ada893;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  overflow: hidden;
-}
-
-.photo {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-right: 20px;
-}
-
-.message {
-  font-size: 16px;
-  color: #333;
-  margin: 10px; 
-  font-family: 'Manrope', sans-serif; 
-}
-
-.new-quest {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0; 
-  display: flex;
-  align-items: center;
-  justify-content: space-between; 
-  background-color: #58554b;
-  color: white;
-  padding: 9px; 
-  font-family: 'Manrope', sans-serif; 
-}
-
-.close-button {
-  width: 15px;
-  height: 15px;
-}
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -53,23 +9,4 @@
 
 .message-appear {
   animation: fadeIn 1s ease-out;
-}
-
-.quest-button {
-  background-color: #ada893; 
-  color: black;
-  border: none; 
-  border-radius: 3px; 
-  padding: 14px 25px; 
-  font-family: 'Manrope', sans-serif; 
-  font-size: 17px; 
-  cursor: pointer; 
-  transition: background-color 0.3s ease; 
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
-  margin-left: 15px; 
-}
-
-.quest-button:hover {
-  background-color: #58554b;
-  color: white;
 }

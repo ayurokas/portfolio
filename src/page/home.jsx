@@ -17,32 +17,26 @@ function Home() {
   };
 
   return (
-    <div className="custom-container">
-      <GlitchText text="START MENU" />
-      <div className="text-component-class">
-        <TextComponent/> 
-      </div>
-      <div>
+    <div className="container my-5">
+      <div className="text-center">
+        <GlitchText text="START MENU" />
+        <div className="mt-4">
+          <TextComponent/> 
+        </div>
         {isLoading && <LoadingScreen />}
-        <div className="button-container">
-          <div className="custom-button">
-          <span className="line-above"></span>
-            {isLoading ? (
-              <div>Chargement en cours...</div>
-            ) : (
-              <button className="color_text-button" onClick={handleStartClick}>
-                COMMENCER
-              </button>
-            )}
+        <div className="mt-5">
+          <button className="custom-button" onClick={handleStartClick}>
+            {isLoading ? "Chargement en cours..." : "COMMENCER"}
+            <span className="line-above"></span>
             <span className="line-below"></span>
-          </div>
-          <div className="custom-button">
-            <Link to="/settings">
-              <span className="line-above"></span>
-              <button className="color_text-button">PARAMETTRE</button>
-              <span className="line-below"></span>
-            </Link>
-          </div>
+          </button>
+        </div>
+        <div className="mt-4">
+        <Link to="/settings" className="custom-button">
+          PARAMÈTRE
+          <span className="line-above"></span>
+          <span className="line-below"></span>
+        </Link>
         </div>
       </div>
     </div>
@@ -50,3 +44,4 @@ function Home() {
 }
 
 export default Home;
+
