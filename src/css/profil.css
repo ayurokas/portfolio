@@ -10,3 +10,18 @@
 .message-appear {
   animation: fadeIn 1s ease-out;
 }
+
+.card {
+  max-width: 800px;
+  margin: auto;
+}
+
+.card-body {
+  text-align: left; 
+}
+
+.card-body img.rounded-circle {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px; 
+}

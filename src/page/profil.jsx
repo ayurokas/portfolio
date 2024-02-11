@@ -1,8 +1,7 @@
-import React, {useState } from 'react';
+import React, { useState } from 'react';
 import GlitchText from '../components/glicht/glicht';
 import Image2B from '../assets/2b.jpg';
 import '../css/profil.css';
-
 
 function ProfilePage() {
   const [showQuest, setShowQuest] = useState(false);
@@ -21,10 +20,10 @@ function ProfilePage() {
         <GlitchText text="AGENT YoRHa" />
       </div>
       {showQuest ? (
-        <div className="card mx-auto" style={{ maxWidth: '800px' }}>
+        <div className="card">
           <div className="card-body">
             <div className="d-flex align-items-center justify-content-between">
-              <img src={Image2B} alt="Icône de quête" className="rounded-circle me-2" style={{ width: '50px', height: '50px' }} />
+              <img src={Image2B} alt="Icône de quête" className="rounded-circle me-2" />
               <span className="flex-grow-1 ms-3">VISITE DU PORTFOLIO</span>
               <button className="btn btn-close" onClick={handleCloseClick}></button>
             </div>
@@ -37,7 +36,7 @@ function ProfilePage() {
           </div>
         </div>
       ) : (
-        <div className="text-center mt-4">
+        <div className="mt-4">
           <button className="btn btn-primary" onClick={handleNewQuestClick}>Nouvelle quête</button>
         </div>
       )}

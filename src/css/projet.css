@@ -1,218 +1,40 @@
-/* Styles pour les éléments .save-slot */
-.save-slot {
-  display: flex;
-  align-items: center;
-  position: relative;
-  margin-bottom: 30px;
-  width: 85%;
-  font-family: 'Manrope', sans-serif;
-  padding-left: 5px;
-  box-sizing: border-box;
-  justify-content: space-between;
-  transition: background-color 0.3s;
-  cursor: pointer;
+.list-group-item {
+    background-color: transparent !important; 
+    border: none !important; 
 }
 
-.save-slot:hover {
-  background-color: #ada893; 
-  border-color: #58554b; 
+.header {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 5px;
+    margin-bottom: 2px;
 }
 
-.save-slot:active {
-  background-color: #ada893; 
-  border-color: #58554b; 
-}
+.language_time{
+    color:var(--secondary-color);
+    font-weight: 500;
 
-/* Style pour l'élément .selected-slot */
-.selected-slot {
-  background-color: #ada893; 
-  border: 2px solid #58554b; 
 }
+.custom-list {
+    overflow-y: auto;
+    max-height: 400px; 
+  }
 
-/* Styles pour l'élément .slot-header */
-.slot-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: white;
-  width: 100%;
-  background-color: #58554b;
-  height: 35px;
-  margin-bottom: 8px;
-}
+  .custom-scrollbar {
+    padding-right: 10px;
+  }
 
-/* Styles pour l'élément .slot-content */
-.slot-content {
-  width: calc(100% - 100px);
-}
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px; 
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 4px; 
+  }
 
-/* Styles pour l'élément .save-image */
-.save-image {
-  width: 80px;
-  height: auto;
-  margin-right: 10px;
-}
-
-/* Styles pour l'élément .slot-details */
-.slot-details {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Styles pour l'élément .slot-language */
-.slot-language {
-  font-size: 0.9em;
-  font-weight: normal;
-}
-
-/* Styles pour l'élément .play-time */
-.play-time {
-  font-size: 0.9em;
-  font-weight: normal;
-  margin-left: auto;
-}
-
-/* Styles pour l'élément .save-name */
-.save-name {
-  font-size: 1.1em;
-  font-weight: bold;
-  margin-left: 15px;
-}
-
-/* Styles pour l'élément .save-date */
-.save-date {
-  font-size: 0.8em;
-  font-weight: normal;
-  margin-right: 10px;
-}
-
-/* Styles pour l'élément .save-screen */
-.save-screen {
-  width: 70%;
-  position: relative;
-  padding-right: 17px;
-}
-
-/* Styles pour l'élément .scroll-container */
-.scroll-container {
-  max-height: 550px;
-  overflow-y: auto;
-  width: calc(40% + 17px);
-  margin-right: -17px;
-  box-sizing: content-box;
-}
-
-.scroll-container::-webkit-scrollbar {
-  width: 3px;
-}
-
-.scroll-container::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.scroll-container::-webkit-scrollbar-thumb {
-  background-color: #58554b;
-  border-radius: 5px;
-  border: none;
-}
-
-/* Styles pour l'élément .project-details */
-.project-details {
-  position: absolute;
-  max-width: 800px;
-  margin: 30px auto;
-  background-color: #ada893;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  font-family: 'Manrope', sans-serif;
-  top: -40px;
-  right: 0;
-  width: calc(55% - 5px);
-}
-
-/* Styles pour l'élément .project-content */
-.project-content {
-  padding: 15px;
-  color: #333;
-  font-size: 15px;
-  line-height: 1.5;
-}
-
-.project-details p {
-  margin: 2px 0;
-}
-
-/* Styles pour l'élément .project-title */
-.project-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #58554b;
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
-  padding: 20px 10px;
-  margin: 0;
-  text-align: left;
-}
-
-/* Styles pour l'élément .project-intitule */
-.project-intitule {
-  font-size: 20px;
-  color: black;
-}
-
-/* Styles pour l'élément .project-description */
-.project-description {
-  font-size: 15px;
-  line-height: 1.8;
-}
-
-/* Styles pour l'élément .project-button */
-.project-button {
-  background-color: #ada893;
-  color: black;
-  padding: 5px 10px;
-  margin-top: 5px;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  border: 2px solid #58554b;
-}
-
-.project-button:hover {
-  background-color: #58554b;
-  color: white;
-  border: 1px solid #ada893;
-}
-
-/* Styles pour l'élément .close-button */
-.close-button {
-  width: 15px;
-  height: 15px;
-  cursor: pointer;
-}
-
-.project-details-animation-enter {
-  transform: scale(0.9);
-  opacity: 0;
-}
-
-.project-details-animation-enter-active {
-  transform: scale(1);
-  opacity: 1;
-  transition: transform 300ms, opacity 300ms;
-}
-
-.project-details-animation-exit {
-  transform: scale(1);
-  opacity: 1;
-}
-
-.project-details-animation-exit-active {
-  transform: scale(0.9);
-  opacity: 0;
-  transition: transform 300ms, opacity 300ms;
-}
-
+  .project-image {
+    width: 70px; /* Largeur souhaitée */
+    height: 70px; /* Hauteur souhaitée */
+    margin-right: -10px; /* Marge négative pour compenser l'espace supplémentaire */
+  }

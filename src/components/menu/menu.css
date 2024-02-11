@@ -11,7 +11,7 @@
   background-color: transparent; 
 }
 .navbar-nav .nav-link {
-  font-size: 0.9vw; 
+  font-size: 0.vw; 
   font-weight: 500;
 
 }
@@ -23,7 +23,7 @@
 }
 
 .nav-item {
-  margin: 0 1rem;
+  margin: 0 0.9rem;
   background-color: var(--primary-color);
   width: 10%;
   position: relative;
