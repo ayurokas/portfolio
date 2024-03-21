@@ -1,3 +1,4 @@
+/* Styles de base pour les grands écrans */
 .navbar-brand img {
   height: 1.5vw; 
   cursor: pointer;
@@ -11,9 +12,8 @@
   background-color: transparent; 
 }
 .navbar-nav .nav-link {
-  font-size: 0.vw; 
+  font-size: 16px; 
   font-weight: 500;
-
 }
 
 .nav-link.active,
@@ -27,7 +27,6 @@
   background-color: var(--primary-color);
   width: 10%;
   position: relative;
-
 }
 
 .nav-link::before,
@@ -87,16 +86,15 @@
   flex: 1;
 }
 
-
 @media (max-width: 768px) {
   .navbar-nav {
-    flex-direction: column; 
+    flex-direction: column;
   }
 
   .nav-item {
-    margin: 0.5rem 0; 
+    margin: 0.5rem 0;
     background-color: var(--primary-color);
-    width: 100%; 
+    width: 100%;
   }
 
   .nav-link {
@@ -105,6 +103,13 @@
   }
 
   .navbar-collapse {
-    margin-top: 1rem; 
+    margin-top: 1rem;
+  }
+  .nav-item::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+
   }
 }
