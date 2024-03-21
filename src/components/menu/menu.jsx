@@ -3,26 +3,25 @@ import './menu.css';
 import { NavLink, useLocation } from 'react-router-dom';
 import arrow from '../../assets/arrow.png';
 
-
 function Menu() {
     const location = useLocation();
     const [clickedLink, setClickedLink] = useState(location.pathname);
+
+    useEffect(() => {
+        setClickedLink(location.pathname);
+    }, [location]);
 
     const getNavLinkClass = (path) => {
         return location.pathname === path ? 'nav-link active' : 'nav-link';
     };
 
     const handleNavLinkClick = (event, path) => {
-        setClickedLink(path); 
+        setClickedLink(path);
     };
-
-    useEffect(() => {
-        setClickedLink(location.pathname);
-    }, [location]);
 
     return (
         <div className="menu-container">
-            <nav className="navbar navbar-expand-lg navbar-light justify-content-center">
+            <nav className="navbar navbar-expand-lg navbar-light">
                 <div className="container-fluid">
                     <div className="navbar-brand" onClick={() => { window.location.href = '/'; }}>
                         <img src={arrow} alt="Back to home"/>
@@ -30,7 +29,7 @@ function Menu() {
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav">
                             <li className={`nav-item ${clickedLink === '/profile' ? 'active' : ''}`}>
                                 <NavLink to="/profile" className={getNavLinkClass('/profile')} onClick={(e) => handleNavLinkClick(e, '/profile')}>

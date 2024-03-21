@@ -86,3 +86,25 @@
   justify-content: center;
   flex: 1;
 }
+
+
+@media (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: column; 
+  }
+
+  .nav-item {
+    margin: 0.5rem 0; 
+    background-color: var(--primary-color);
+    width: 100%; 
+  }
+
+  .nav-link {
+    display: block;
+    padding: 1rem;
+  }
+
+  .navbar-collapse {
+    margin-top: 1rem; 
+  }
+}
