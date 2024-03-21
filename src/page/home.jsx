@@ -29,16 +29,13 @@ function Home() {
         <div className="mt-3">
           <button className="custom-button" onClick={handleStartClick}>
             {isLoading ? "Chargement en cours..." : "COMMENCER"}
-            <span className="line-above"></span>
-            <span className="line-below"></span>
+
             <span className="black-square"></span>
           </button>
         </div>
         <div className="mt-4">
         <Link to="/settings" className="custom-button">
           PARAMÈTRE
-          <span className="line-above"></span>
-          <span className="line-below"></span>
           <span className="black-square"></span>
         </Link>
         </div>
