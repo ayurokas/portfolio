@@ -94,9 +94,6 @@ function ProfilePage() {
                 <button className="custom-button-quest" disabled>Quête pas encore disponible</button>
           </div>
         </div>
-        <div className="col d-flex justify-content-center">
-          <div className="quest-divider-vertical"></div>
-        </div>
         <div className="col">
           <div className="quest-container">
             <h2 className="quest-title">QUETE SECONDAIRE</h2>

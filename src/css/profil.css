@@ -1,28 +1,12 @@
 .quest-title {
   font-size: 1.5rem;
-  margin-bottom: 10px;
   font-family: 'Manrope', sans-serif;
-  color: var(--secondary-color);
+  color: var(--primary-color);
   font-weight: bold;
-}
-
-.quest-divider-vertical {
-  border-left: 2px solid var(--secondary-color);
-  height: 100%; 
-}
-/* Styles pour les quêtes principales */
-.main-quest {
-  background-color: #f0f0f0;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
-
-.secondary-quest {
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
+  background-color: var(--secondary-color); 
+  padding: 8px 25px;
+  display: inline-block; 
+  max-width: fit-content;
 }
 
 /* Animation pour l'apparition des quêtes */
@@ -54,12 +38,15 @@
   height: 50px;
   margin-right: 10px; 
 }
+
 .custom-button-quest {
   background-color: var(--primary-color);
   border: none; 
   padding: 10px 20px;
   cursor: pointer;
   min-width: 250px;
+  color: var(--secondary-color);  
+  margin: 6px;
 }
 
 .custom-button-quest:hover {
@@ -105,7 +92,7 @@
   color: white;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 850px) {
   .card {
     width: 100%;
   }
@@ -113,7 +100,5 @@
   .card-body {
     font-size: 0.8rem; 
   }
-  .quest-divider-vertical {
-    display: none; 
-  }
+
 }
