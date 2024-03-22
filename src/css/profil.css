@@ -40,7 +40,8 @@
 }
 
 .card {
-  max-width: 800px;
+  width: 120%;
+  max-height: 800px; 
   margin: auto;
 }
 
@@ -102,4 +103,17 @@
 .custom-button-quest:focus {
   background-color: var(--secondary-color);
   color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: 100%;
+  }
+  
+  .card-body {
+    font-size: 0.8rem; 
+  }
+  .quest-divider-vertical {
+    display: none; 
+  }
 }

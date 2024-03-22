@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import GlitchText from '../components/glicht/glicht';
 import Image2B from '../assets/2b.jpg';
+import Image9s from '../assets/9s.png';
+
 import '../css/profil.css';
 
 function ProfilePage() {
@@ -61,7 +63,7 @@ function ProfilePage() {
               <div className="card mt-4">
                 <div className="card-body">
                   <div className="d-flex align-items-center justify-content-between">
-                    <img src={Image2B} alt="Icône de quête" className="rounded-circle me-2" />
+                    <img src={Image9s} alt="Icône de quête" className="rounded-circle me-2" />
                     <span className="flex-grow-1 ms-3">VISITE DU PORTFOLIO</span>
                     <button className="btn btn-close" onClick={handleCloseClick}></button>
                   </div>
@@ -78,6 +80,18 @@ function ProfilePage() {
                   <button className="custom-button-quest" onClick={handleNewMainQuest2Click}>Visite du Portfolio</button>
               </div>
             )}
+          </div>
+          <div className="mt-2">
+                <button className="custom-button-quest" disabled>Quête pas encore disponible</button>
+          </div>
+          <div className="mt-2">
+                <button className="custom-button-quest" disabled>Quête pas encore disponible</button>
+          </div>
+          <div className="mt-2">
+                <button className="custom-button-quest" disabled>Quête pas encore disponible</button>
+          </div>
+          <div className="mt-2">
+                <button className="custom-button-quest" disabled>Quête pas encore disponible</button>
           </div>
         </div>
         <div className="col d-flex justify-content-center">
