@@ -1,6 +1,6 @@
 /* Styles de base pour les grands écrans */
 .navbar-brand img {
-  height: 1.5vw; 
+  height: 1.5em; 
   cursor: pointer;
 }
 
@@ -12,7 +12,7 @@
   background-color: transparent; 
 }
 .navbar-nav .nav-link {
-  font-size: 16px; 
+  font-size: 1em; 
   font-weight: 500;
 }
 
@@ -23,9 +23,9 @@
 }
 
 .nav-item {
-  margin: 0 0.9rem;
+  margin: 0 0.9em; 
   background-color: var(--primary-color);
-  width: 10%;
+  width: 12%;
   position: relative;
 }
 
@@ -35,7 +35,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  height: 2px;
+  height: 0.125em; 
   background-color: var(--secondary-color);
   transform: scaleX(0);
   transition: transform 0.3s ease;
@@ -49,11 +49,11 @@
 }
 
 .nav-link::before {
-  top: -5px;
+  top: -0.3125em;
 }
 
 .nav-link::after {
-  bottom: -5px;
+  bottom: -0.3125em; 
 }
 
 .nav-item:hover::after {
@@ -68,14 +68,14 @@
 .nav-item::after {
   content: '';
   display: block;
-  width: 50px;
-  height: 50px;
+  width: 3.125em; 
+  height: 3.125em;
   background-image: url('../../assets/logo_menu.png');
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
   top: 90%;
-  left: -40px;
+  left: -2.5em; 
   transform: translateY(-50%);
   z-index: 1;
   opacity: 0;
@@ -86,24 +86,48 @@
   flex: 1;
 }
 
+@media (max-width: 1024px) {
+  /* Ajout de styles pour les tablettes et les mobiles */
+  .navbar-nav {
+    flex-direction: row; 
+  }
+
+  .nav-item {
+    margin: 0.5em; 
+    width: auto; 
+  }
+
+  .nav-link {
+    padding: 0.8em 1.2em; 
+    font-size: 0.9em;
+  }
+
+  .navbar-collapse {
+    display: flex; 
+    justify-content: flex-end; 
+    margin-top: 1em;
+  }
+}
+
 @media (max-width: 768px) {
   .navbar-nav {
     flex-direction: column;
   }
 
   .nav-item {
-    margin: 0.5rem 0;
+    margin: 0.5em 0;
     background-color: var(--primary-color);
     width: 100%;
   }
 
   .nav-link {
     display: block;
-    padding: 1rem;
+    padding: 1em;
+    font-size: calc(14px + 2 * ((100vw - 320px) / 680)); 
   }
 
   .navbar-collapse {
-    margin-top: 1rem;
+    margin-top: 1em;
   }
   .nav-item::after {
     content: '';
@@ -111,5 +135,12 @@
     width: 0;
     height: 0;
 
+  }
+}
+
+@media (max-width: 1024px) {
+  /* Masquer l'image de fond sur les tablettes */
+  .nav-item::after {
+    display: none;
   }
 }
