@@ -21,3 +21,10 @@ body, html, #root {
   letter-spacing: 0.1em;
   text-shadow: 9px 19px 0px rgba(172, 168, 153, 0.5);
 }
+
+@media screen and (max-width: 850px) {
+
+  .glitch {
+    font-size: 2.2rem;
+  }
+}
