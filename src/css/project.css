@@ -1,0 +1,47 @@
+.project-page .slick-slider {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.project-page .slick-slide {
+  padding: 0 10px;
+}
+
+.project-page .slick-slide img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.project-page .slick-dots {
+  bottom: -20px;
+}
+
+.project-page .slick-dots li button:before {
+  font-size: 12px;
+}
+
+.project-page .slick-dots li.slick-active button:before {
+  color: #000;
+}
+/* Styles pour les flèches personnalisées */
+.custom-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 45%;
+    cursor: pointer;
+    z-index: 1;
+    color: #ffffff; 
+    font-size: 30px;
+    color: var(--secondary-color);
+  }
+  
+  .custom-next {
+    right: -20px; 
+  }
+  
+  .custom-prev {
+    left: -20px;
+  }
+  

@@ -4,6 +4,8 @@ import Layout from './components/layout/layout';
 import Home from './page/home';
 import Settings from './page/settings';
 import Profil from './page/profil';
+import Project from './page/project';
+
 
 function App() {
   return (
@@ -13,6 +15,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profil />} />
           <Route path="/settings" element={<Settings />} />
+          <Route path="/project" element={<Project />} />
         </Routes>
       </Layout>
     </Router>

@@ -39,7 +39,7 @@ function Menu() {
                                 </NavLink>
                             </li>
                             <li className={`nav-item ${clickedLink === '/projet' ? 'active' : ''}`}>
-                                <NavLink to="/projet" className={getNavLinkClass('/projet')} onClick={(e) => handleNavLinkClick(e, '/projet')}>
+                                <NavLink to="/project" className={getNavLinkClass('/project')} onClick={(e) => handleNavLinkClick(e, '/project')}>
                                     <span className="line-above"></span>
                                     PROJET
                                     <span className="line-below"></span>

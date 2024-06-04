@@ -139,7 +139,6 @@
 }
 
 @media (max-width: 1024px) {
-  /* Masquer l'image de fond sur les tablettes */
   .nav-item::after {
     display: none;
   }
