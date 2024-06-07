@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../css/project.css';
 import ProjectCard from '../components/project/Project';
 import GlitchText from '../components/glicht/glicht';
@@ -6,6 +6,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { useMediaQuery } from 'react-responsive';
+import { useSpring, animated } from '@react-spring/web';
 
 // Liste des projets
 const projects = [
@@ -28,12 +29,13 @@ const NextArrow = ({ onClick }) => {
 const PrevArrow = ({ onClick }) => {
   return (
     <div className="custom-arrow custom-prev" onClick={onClick}>
-      &larr; {/* Flèche gauche */}
+      &larr;
     </div>
   );
 };
 
 const ProjectPage = () => {
+  const [showCarousel, setShowCarousel] = useState(false);
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
 
   const settings = {
@@ -46,10 +48,23 @@ const ProjectPage = () => {
     prevArrow: <PrevArrow />
   };
 
+  const fadeStyles = useSpring({
+    opacity: showCarousel ? 1 : 0,
+    transform: showCarousel ? 'translateY(0)' : 'translateY(20px)',
+    config: { duration: 500 }
+  });
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowCarousel(true);
+    }, 1000); 
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="container text-center my-5 project-page">
       <GlitchText text="LES PROJECTS" />
-      <div className="d-flex flex-column justify-content-center align-items-center">
+      <animated.div style={fadeStyles} className="d-flex flex-column justify-content-center align-items-center">
         <div className="row mt-4 w-100">
           <div className="col">
             <div className="slider-container">
@@ -63,7 +78,7 @@ const ProjectPage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </animated.div>
     </div>
   );
 };

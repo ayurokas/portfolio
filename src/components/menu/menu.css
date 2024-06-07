@@ -10,7 +10,9 @@
   position: relative;
   text-align: center;
   background-color: transparent; 
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 .navbar-nav .nav-link {
   font-size: 1em; 
   font-weight: 500;
@@ -27,6 +29,7 @@
   background-color: var(--primary-color);
   width: 12%;
   position: relative;
+  transition: background-color 0.3s ease;
 }
 
 .nav-link::before,
@@ -56,10 +59,7 @@
   bottom: -0.3125em; 
 }
 
-.nav-item:hover::after {
-  opacity: 1;
-}
-
+.nav-item:hover::after,
 .nav-item.active::after,
 .nav-item.active:hover::after {
   opacity: 1;
@@ -84,62 +84,72 @@
 .navbar-nav {
   justify-content: center;
   flex: 1;
+  transition: all 0.3s ease;
 }
 
 @media (max-width: 1024px) {
-  /* Ajout de styles pour les tablettes et les mobiles */
+  /* Styles pour les tablettes et les mobiles */
   .navbar-nav {
-    flex-direction: row; 
+    flex-direction: column; 
+    align-items: flex-start;
   }
 
   .nav-item {
-    margin: 0.5em; 
-    width: auto; 
-  }
-
-  .nav-link {
-    padding: 0.8em 1.2em; 
-    font-size: 0.9em;
-  }
-
-  .navbar-collapse {
-    display: flex; 
-    justify-content: flex-end; 
-    margin-top: 1em;
-  }
-}
-
-@media (max-width: 768px) {
-  .navbar-nav {
-    flex-direction: column;
-  }
-
-  .nav-item {
-    margin: 0.5em 0;
-    background-color: var(--primary-color);
+    margin: 0.5em 0; 
     width: 100%;
   }
 
   .nav-link {
-    display: block;
-    padding: 1em;
-    font-size: calc(14px + 2 * ((100vw - 320px) / 680)); 
+    padding: 0.8em 1.2em; 
+    font-size: 1em;
   }
 
   .navbar-collapse {
+    display: flex; 
+    justify-content: flex-start; 
     margin-top: 1em;
   }
-  .nav-item::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 0;
 
-  }
-}
-
-@media (max-width: 1024px) {
   .nav-item::after {
     display: none;
+  }
+  
+  /* Styles pour la modale */
+  .menu-modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #cacac6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  .close {
+    color: #58554b;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
   }
 }

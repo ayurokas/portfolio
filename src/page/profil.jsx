@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useSprings, animated } from '@react-spring/web';
 import GlitchText from '../components/glicht/glicht';
 import Image2B from '../assets/2b.jpg';
 import Image9s from '../assets/9s.png';
@@ -65,9 +66,9 @@ function ProfilePage() {
     };
 
     if (!isMobile) {
-      showQuestButtons('main', 1000);
-      showQuestButtons('secondary', 1000);
-      setTimeout(() => setShowTitles(true), 1000);
+      showQuestButtons('main', 900);
+      showQuestButtons('secondary', 900);
+      setTimeout(() => setShowTitles(true), 900);
     } else {
       setShownButtons({
         main: quests.main.map((_, index) => index),
@@ -88,17 +89,38 @@ function ProfilePage() {
     setSelectedQuest(null);
   };
 
-  const renderQuests = (category) => {
+  const springsMain = useSprings(
+    quests.main.length,
+    quests.main.map((_, index) => ({
+      opacity: shownButtons.main.includes(index) ? 1 : 0,
+      transform: shownButtons.main.includes(index) ? 'translateY(0)' : 'translateY(20px)',
+      config: { tension: 200, friction: 20 },
+      delay: index * 300,
+    }))
+  );
+
+  const springsSecondary = useSprings(
+    quests.secondary.length,
+    quests.secondary.map((_, index) => ({
+      opacity: shownButtons.secondary.includes(index) ? 1 : 0,
+      transform: shownButtons.secondary.includes(index) ? 'translateY(0)' : 'translateY(20px)',
+      config: { tension: 200, friction: 20 },
+      delay: index * 300,
+    }))
+  );
+
+  const renderQuests = (category, springs) => {
     return quests[category].map((quest, index) => (
       <div key={quest.id} className="mt-2">
         {shownButtons[category].includes(index) && (
-          <button
+          <animated.button
+            style={springs[index]}
             className={`custom-button-quest ${!isMobile ? (quest.available ? 'button-animation' : 'button-animation_secondary') : ''}`}
             onClick={() => quest.available && handleNewQuestClick(quest.id)}
             disabled={!quest.available}
           >
             {quest.label}
-          </button>
+          </animated.button>
         )}
       </div>
     ));
@@ -129,13 +151,13 @@ function ProfilePage() {
         <div className="col">
           <div className="quest-container">
             {showTitles && <h2 className="quest-title">QUETES PRINCIPALES</h2>}
-            {renderQuests('main')}
+            {renderQuests('main', springsMain)}
           </div>
         </div>
         <div className="col">
           <div className="quest-container">
             {showTitles && <h2 className="quest-title secondary">QUETE SECONDAIRE</h2>}
-            {renderQuests('secondary')}
+            {renderQuests('secondary', springsSecondary)}
           </div>
         </div>
       </div>
