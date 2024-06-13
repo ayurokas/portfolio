@@ -66,9 +66,9 @@ function ProfilePage() {
     };
 
     if (!isMobile) {
-      showQuestButtons('main', 900);
-      showQuestButtons('secondary', 900);
-      setTimeout(() => setShowTitles(true), 900);
+      showQuestButtons('main', 600);
+      showQuestButtons('secondary', 600);
+      setTimeout(() => setShowTitles(true), 700);
     } else {
       setShownButtons({
         main: quests.main.map((_, index) => index),

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useSpring, animated } from '@react-spring/web';
 import LoadingScreen from '../components/loading_page/loading'; 
 import GlitchText from '../components/glicht/glicht';
 import TextComponent from './../components/text_start/text';
@@ -34,6 +35,16 @@ function Home() {
     }, 1100); 
   };
 
+  const fadeIn = useSpring({
+    opacity: showButtons ? 1 : 0,
+    transform: showButtons ? 'translateY(0)' : 'translateY(20px)',
+  });
+
+  const fadeInSecondButton = useSpring({
+    opacity: showSecondButton ? 1 : 0,
+    transform: showSecondButton ? 'translateY(0)' : 'translateY(20px)',
+  });
+
   return (
     <div className="container my-5">
       <div className="text-center">
@@ -42,22 +53,22 @@ function Home() {
           <TextComponent/> 
         </div>
         {isLoading && <LoadingScreen />}
-        <div className={`mt-3 ${showButtons ? 'show' : ''}`}>
+        <animated.div style={fadeIn} className="mt-3">
           {showButtons && ( 
-            <button className={`custom-button ${showButtons ? 'show' : ''}`} onClick={handleStartClick}>
+            <button className="custom-button" onClick={handleStartClick}>
               {isLoading ? "Chargement en cours..." : "COMMENCER"}
               <span className="black-square"></span>
             </button>
           )}
-        </div>
-        <div className={`mt-4 ${showSecondButton ? 'show' : ''}`}>
+        </animated.div>
+        <animated.div style={fadeInSecondButton} className="mt-4">
           {showSecondButton && ( 
-            <Link to="/settings" className={`custom-button ${showSecondButton ? 'show' : ''}`}>
+            <Link to="/settings" className="custom-button">
               PARAMÈTRE
               <span className="black-square"></span>
             </Link>
           )}
-        </div>
+        </animated.div>
       </div>
     </div>
   );

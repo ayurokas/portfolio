@@ -5,6 +5,8 @@ import Home from './page/home';
 import Settings from './page/settings';
 import Profil from './page/profil';
 import Project from './page/project';
+import Skill from './page/skill';
+
 
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
           <Route path="/profile" element={<Profil />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/project" element={<Project />} />
+          <Route path="/competence" element={<Skill />} />
+
         </Routes>
       </Layout>
     </Router>
