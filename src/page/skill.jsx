@@ -55,8 +55,6 @@ const SkillsPage = () => {
   const tools = [
     { name: 'Figma', percentage: 40 },
     { name: 'Visual Studio / Visual Studio Code', percentage: 50 },
-    { name: 'Linux', percentage: 10 },
-    { name: 'Window', percentage: 60 },
     { name: 'Github', percentage: 30 },
   ];
 
