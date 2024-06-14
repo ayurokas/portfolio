@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, ListGroup, ProgressBar, Carousel } from 'react-bootstrap';
+import { Container, Row, ListGroup, ProgressBar, Carousel } from 'react-bootstrap';
 import { useSpring, animated } from '@react-spring/web';
 import GlitchText from '../components/glicht/glicht';
 import '../css/skill.css';
@@ -97,7 +97,7 @@ const SkillsPage = () => {
         <animated.div style={skillsAnimation}>
           <Container>
             {isMobile ? (
-              <Carousel indicators={false} controls={false}>
+              <Carousel indicators={true} controls={false}>
                 {categories.map((category, index) => (
                   <Carousel.Item key={index}>
                     <div className="carousel-item-content">
