@@ -3,16 +3,17 @@ import { Container, Row, Col, ListGroup, ProgressBar, Carousel } from 'react-boo
 import { useSpring, animated } from '@react-spring/web';
 import GlitchText from '../components/glicht/glicht';
 import '../css/skill.css';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 const SkillsPage = () => {
   const [showSkills, setShowSkills] = useState(false);
   const [showProgress, setShowProgress] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 767);
+      setIsTablet(window.innerWidth > 767 && window.innerWidth <= 1024);
     };
 
     handleResize();
@@ -72,7 +73,7 @@ const SkillsPage = () => {
   ];
 
   const renderCategory = (category, index) => (
-    <Col xs={12} md={6} lg={3} key={index} className="category-column">
+    <div key={index} className="category-column">
       <div className="category-header">{category.title}</div>
       <ListGroup variant="flush">
         {category.skills.map((skill, idx) => (
@@ -86,18 +87,6 @@ const SkillsPage = () => {
           </ListGroup.Item>
         ))}
       </ListGroup>
-    </Col>
-  );
-
-  const CustomPrevArrow = (props) => (
-    <div {...props} className="custom-arrow custom-prev">
-      <FaArrowLeft />
-    </div>
-  );
-
-  const CustomNextArrow = (props) => (
-    <div {...props} className="custom-arrow custom-next">
-      <FaArrowRight />
     </div>
   );
 
@@ -108,7 +97,7 @@ const SkillsPage = () => {
         <animated.div style={skillsAnimation}>
           <Container>
             {isMobile ? (
-              <Carousel prevIcon={<CustomPrevArrow />} nextIcon={<CustomNextArrow />} indicators={false}>
+              <Carousel indicators={false} controls={false}>
                 {categories.map((category, index) => (
                   <Carousel.Item key={index}>
                     <div className="carousel-item-content">
@@ -117,6 +106,10 @@ const SkillsPage = () => {
                   </Carousel.Item>
                 ))}
               </Carousel>
+            ) : isTablet ? (
+              <div className="skills-grid">
+                {categories.map((category, index) => renderCategory(category, index))}
+              </div>
             ) : (
               <Row className="justify-content-center">
                 {categories.map((category, index) => renderCategory(category, index))}
