@@ -21,7 +21,7 @@ const projects = [
 const NextArrow = ({ onClick }) => {
   return (
     <div className="custom-arrow custom-next" onClick={onClick}>
-      &rarr; {/* Flèche droite */}
+      &rarr; 
     </div>
   );
 };
