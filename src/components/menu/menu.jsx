@@ -69,13 +69,6 @@ function Menu() {
                                     <span className="line-below"></span>
                                 </NavLink>
                             </li>
-                            <li className={`nav-item ${location.pathname === '/social' ? 'active' : ''}`}>
-                                <NavLink to="/social" className={getNavLinkClass('/social')}>
-                                    <span className="line-above"></span>
-                                    SOCIAL
-                                    <span className="line-below"></span>
-                                </NavLink>
-                            </li>
                             <li className={`nav-item ${location.pathname === '/contact' ? 'active' : ''}`}>
                                 <NavLink to="/contact" className={getNavLinkClass('/contact')}>
                                     <span className="line-above"></span>

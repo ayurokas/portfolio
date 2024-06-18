@@ -6,7 +6,7 @@ import Settings from './page/settings';
 import Profil from './page/profil';
 import Project from './page/project';
 import Skill from './page/skill';
-
+import Contact from './page/contact';
 
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
           <Route path="/settings" element={<Settings />} />
           <Route path="/project" element={<Project />} />
           <Route path="/competence" element={<Skill />} />
-
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </Layout>
     </Router>

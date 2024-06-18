@@ -1,0 +1,21 @@
+import React from 'react';
+import '../css/popup.css';
+
+function ContactInfoPopup({ onClose }) {
+  return (
+    <div className="popup">
+      <div className="popup-inner">
+        <div className="popup-header">
+          <span>Contact Information</span>
+          <button onClick={onClose} className="close-btn">X</button>
+        </div>
+        <div className="popup-content">
+          <p>Email: example@example.com</p>
+          <p>Phone: +123 456 7890</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default ContactInfoPopup;
