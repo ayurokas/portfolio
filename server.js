@@ -9,22 +9,23 @@ app.use(cors());
 
 app.post('/send', (req, res) => {
     const { name, email, message } = req.body;
-    
+
     console.log('Données reçues:', { name, email, message });
 
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'elisa.renuy@gmail.com',
-            pass: 'ilze jbwd sdnd uhwf'
+            user: 'elisa.renuy@gmail.com', 
+            pass: 'ilze jbwd sdnd uhwf' 
         }
     });
 
     const mailOptions = {
-        from: email,
+        from: `Message de ${name} <elisa.renuy@gmail.com>`, 
         to: 'elisa.renuy@gmail.com',
-        subject: `Message de ${name}`,
-        text: message
+        subject: `Nouveau message de ${name}`,
+        text: `Vous avez reçu un nouveau message de ${name} (${email}):\n\n${message}`,
+        replyTo: email 
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
