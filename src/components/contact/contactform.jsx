@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './contactform.css';
-import { sendContactForm } from '../../utils/apifetch';
+import emailjs from 'emailjs-com';
 
 const ContactForm = () => {
     const [name, setName] = useState('');
@@ -8,17 +8,26 @@ const ContactForm = () => {
     const [message, setMessage] = useState('');
     const [submitted, setSubmitted] = useState(false);
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
 
-        const formData = { name, email, message };
+        const templateParams = {
+            from_name: name,
+            from_email: email,
+            message: message,
+        };
 
-        try {
-            await sendContactForm(formData);
-            setSubmitted(true);
-        } catch (error) {
-            alert('Une erreur est survenue. Veuillez réessayer.');
-        }
+        emailjs.send('service_8gqnou7', 'template_n7egvri', templateParams, 'W2KuVmIyTNoXh9FPZ')
+            .then((response) => {
+                console.log('SUCCESS!', response.status, response.text);
+                setSubmitted(true);
+            }, (error) => {
+                console.log('FAILED...', error);
+            });
+
+        setName('');
+        setEmail('');
+        setMessage('');
     };
 
     return (
